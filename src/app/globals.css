@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@theme {
+  --color-primary: rgb(250, 204, 21); /* Yellow-400 */
+  --color-primary-dark: rgb(234, 179, 8); /* Yellow-500 */
+  --color-primary-light: rgb(254, 240, 138); /* Yellow-200 */
+}
+
+.nav-container {
+  @apply h-16 bg-yellow-400 shadow-md sticky top-0 z-50 transition-colors duration-300;
+}
+
+.nav-content {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full;
+}
+
+.nav-logo {
+  @apply text-2xl font-bold text-gray-800 hover:text-gray-900 transition-colors;
+}
+
+.nav-links {
+  @apply hidden md:flex items-center gap-6;
+}
+
+.nav-link {
+  @apply px-3 py-2 rounded-md text-gray-800 hover:bg-yellow-500 transition-all duration-200
+    active:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500/50;
+}
+
+.nav-dropdown {
+  @apply relative inline-block text-left;
+}
+
+.nav-dropdown-button {
+  @apply px-3 py-2 rounded-md text-gray-800 hover:bg-yellow-500
+    transition-all duration-200 flex items-center gap-2;
+}
+
+.nav-dropdown-content {
+  @apply absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black/5
+    focus:outline-none transform opacity-0 scale-95 transition-all duration-200;
+}
+
+.nav-dropdown-content.show {
+  @apply opacity-100 scale-100;
+}
+
+.nav-dropdown-item {
+  @apply block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-100 hover:text-gray-900
+    transition-colors duration-200;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-button {
+  @apply md:hidden p-2 rounded-md text-gray-800 hover:bg-yellow-500
+    focus:outline-none focus:ring-2 focus:ring-yellow-500/50;
+}
+
+.mobile-menu {
+  @apply md:hidden bg-yellow-400 border-t border-yellow-500;
+}
+
+.mobile-nav-link {
+  @apply block px-4 py-3 text-gray-800 hover:bg-yellow-500 transition-colors
+    border-b border-yellow-300;
+}
+
+.mobile-dropdown {
+  @apply px-4 py-2;
+}
+
+.mobile-dropdown-content {
+  @apply pl-4 mt-1 space-y-1 border-l-2 border-yellow-500;
+}
+
+/* Dark mode overrides */
+@dark {
+  .nav-container {
+    @apply bg-yellow-500;
+  }
+
+  .nav-link, .nav-dropdown-button {
+    @apply text-gray-900;
+  }
+
+  .nav-dropdown-content {
+    @apply bg-gray-800 ring-gray-700;
+  }
+
+  .nav-dropdown-item {
+    @apply text-gray-300 hover:bg-gray-700 hover:text-white;
+  }
+
+  .mobile-menu {
+    @apply bg-yellow-500 border-yellow-600;
+  }
+
+  .mobile-nav-link {
+    @apply text-gray-900 hover:bg-yellow-600 border-yellow-400;
+  }
+}

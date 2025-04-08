@@ -1,0 +1,17 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# Host
+Host: https://sassa.web.za
+
+# Sitemaps
+Sitemap: https://sassa.web.za/sitemap.xml
+Sitemap: https://sassa.web.za/sitemaps/posts.xml
+Sitemap: https://sassa.web.za/sitemaps/pages.xml
+
+# Crawl-delay
+Crawl-delay: 10

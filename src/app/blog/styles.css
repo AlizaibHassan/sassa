@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+.blog-post {
+  @apply min-h-screen bg-white;
+}
+
+.blog-post-hero {
+  @apply relative h-[60vh] min-h-[400px] w-full bg-gray-900;
+}
+
+.blog-post-hero-image {
+  @apply object-cover opacity-50;
+}
+
+.blog-post-hero-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent;
+}
+
+.blog-post-hero-content {
+  @apply absolute bottom-0 left-0 right-0 p-8;
+}
+
+.blog-post-back-link {
+  @apply inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors;
+}
+
+.blog-post-title {
+  @apply text-4xl md:text-5xl font-bold text-white mb-6 leading-tight;
+}
+
+.blog-post-meta {
+  @apply flex flex-wrap items-center gap-6 text-white/80;
+}
+
+.blog-post-author {
+  @apply flex items-center gap-2;
+}
+
+.blog-post-date {
+  @apply flex items-center gap-2;
+}
+
+.blog-post-content {
+  @apply container mx-auto max-w-4xl px-4 py-12;
+}
+
+.blog-post-body {
+  @apply prose prose-lg max-w-none
+    prose-headings:text-gray-900 
+    prose-p:text-gray-700 
+    prose-a:text-yellow-600 
+    prose-a:no-underline 
+    hover:prose-a:text-yellow-700
+    prose-strong:text-gray-900 
+    prose-img:rounded-xl;
+}
+
+/* Blog Grid Styles */
+.blog-grid {
+  @apply grid gap-8 md:grid-cols-2 lg:grid-cols-3;
+}
+
+.blog-hero {
+  @apply text-center mb-12;
+}
+
+.blog-hero-title {
+  @apply text-4xl font-bold text-gray-900 mb-4;
+}
+
+.blog-hero-description {
+  @apply text-xl text-gray-600 max-w-2xl mx-auto;
+}
+
+/* Empty State */
+.blog-empty {
+  @apply text-center py-12;
+}
+
+.blog-empty-title {
+  @apply text-2xl font-bold text-gray-900 mb-4;
+}
+
+.blog-empty-message {
+  @apply text-lg text-gray-600 max-w-md mx-auto;
+}

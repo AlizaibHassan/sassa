@@ -1,0 +1,77 @@
+{
+  "name": "SASSA Services",
+  "short_name": "SASSA",
+  "description": "Access SASSA services online: check grant status, payment dates, and more",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#fbbf24",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Check Status",
+      "short_name": "Status",
+      "description": "Check your SASSA grant status",
+      "url": "/pages/sassa-status-check",
+      "icons": [{ "src": "/icons/status.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Payment Dates",
+      "short_name": "Payments",
+      "description": "View SASSA payment dates",
+      "url": "/pages/sassa-payment-dates-for-2025",
+      "icons": [{ "src": "/icons/calendar.png", "sizes": "192x192" }]
+    }
+  ],
+  "categories": ["government", "finance", "social services"],
+  "screenshots": [
+    {
+      "src": "/screenshots/home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Home screen of SASSA Services"
+    },
+    {
+      "src": "/screenshots/status.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Status check interface"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=za.gov.sassa.app"
+    }
+  ],
+  "prefer_related_applications": false,
+  "lang": "en-ZA",
+  "dir": "ltr",
+  "scope": "/",
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "share_target": {
+    "action": "/share",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}
