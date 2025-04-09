@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 
 const CanonicalTag = () => {
   const pathname = usePathname();
-  // Update 'https://sassa.com' with your actual domain if needed.
-  const canonicalUrl = `https://sassa.com${pathname}`;
+  // Update 'https://sassa.web.za' with your actual domain if needed.
+  const canonicalUrl = `https://sassa.web.za${pathname}`;
 
   useEffect(() => {
     let link = document.querySelector("link[rel='canonical']");
