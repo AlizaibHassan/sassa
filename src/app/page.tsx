@@ -63,6 +63,9 @@ export default async function Home() {
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               SASSA Status Check
             </h1>
+                              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Check your SRD R350 grant application status for April 2025. Get instant access to your payment information.
+            </p>
           </div>
         </div>
         
@@ -77,9 +80,7 @@ export default async function Home() {
             </div>
           </div>
         </section>
-                  <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Check your SRD R350 grant application status for April 2025. Get instant access to your payment information.
-            </p>
+
       )}
 
       {/* Quick Links */}
