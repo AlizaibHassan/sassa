@@ -59,6 +59,11 @@ export default {
         permanent: true,
       },
       {
+        source: '/check',
+        destination: '/',
+        permanent: true,
+      },
+      {
         source: '/status/srd-check',
         destination: '/blog/srd-check',
         permanent: true,
