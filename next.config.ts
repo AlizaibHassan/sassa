@@ -454,11 +454,6 @@ export default {
         permanent: true,
       },
       {
-        source: '/sassa-loan-calculator',
-        destination: '/blog/sassa-loan-calculator',
-        permanent: true,
-      },
-      {
         source: '/sassa-grant-payment-dates-2024-when-will-i-receive-my-social-grant',
         destination: '/blog/sassa-grant-payment-dates-2024-when-will-i-receive-my-social-grant',
         permanent: true,
