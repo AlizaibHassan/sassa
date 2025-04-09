@@ -19,7 +19,7 @@ const description = pageContent?.excerpt?.rendered
     .replace(/&amp;/g, '&') // Replace HTML entities
     .substring(0, 160) // Limit to 160 characters
     .trim() // Trim whitespace
-  : 'Check your SASSA SRD R350 grant status for April 2025. Get instant access to your Social Relief of Distress (SRD) grant application status.';
+  : 'Check your SASSA SRD R350 grant status for 2025. Get instant access to your Social Relief of Distress (SRD) grant application status.';
 
   return {
     title,
