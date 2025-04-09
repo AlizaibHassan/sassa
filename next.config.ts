@@ -32,6 +32,18 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true
   }
+
+  async redirects() {
+    return [
+
+      {
+        source: '/your-financial-calendar-sassa-r350-grant-payment-highlights',
+        destination: '/blog/your-financial-calendar-sassa-r350-grant-payment-highlights',
+        permanent: true,
+      },
+      
+      ];
+},
 };
 
 export default nextConfig;
