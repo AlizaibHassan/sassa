@@ -3,6 +3,7 @@ const NEXT_DOMAIN = process.env.NEXT_PUBLIC_DOMAIN || 'localhost:3000';
 
 // Create a set of all known page routes for quick lookup
 const pageRoutes = new Set([
+  '/',
   '/check',
   '/payment-dates',
   '/sassa-loan-calculator',
