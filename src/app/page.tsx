@@ -166,7 +166,7 @@ export default async function Home() {
               
               <div className="bg-yellow-50 p-6 rounded-lg my-8">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  April 2025 Updates
+                  2025 Updates
                 </h3>
                 <p className="text-gray-700">
                   Payment dates are determined by the last three digits of your ID number.
