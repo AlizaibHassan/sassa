@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const title = pageContent?.title?.rendered
     ? pageContent.title.rendered.replace(/&amp;/g, '&')
-    : 'SASSA Status Check / SRD Status Check R370 [April 2025]';
+    : 'SASSA Status Check / SRD Status Check R370 Payment Dates';
 
   // Extract description from content if available
 // Extract description from excerpt if available
@@ -68,24 +68,7 @@ export default async function Home() {
             </p>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/check"
-            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-600 transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Check Status Now
-          </Link>
-          <Link
-            href="/payment-dates"
-            className="inline-flex items-center justify-center px-6 py-3 border border-yellow-500 text-base font-medium rounded-md text-yellow-600 bg-white hover:bg-yellow-50 transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Apply for Grant
-          </Link>
-        </div>
+        
       </section>
 
       {/* Page Content */}
@@ -163,6 +146,26 @@ export default async function Home() {
                 <li>Ensure your banking details are correct and verified</li>
                 <li>Monitor official SASSA channels for important announcements</li>
               </ul>
+
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            href="/check"
+            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-600 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Check Status Now
+          </Link>
+          <Link
+            href="/payment-dates"
+            className="inline-flex items-center justify-center px-6 py-3 border border-yellow-500 text-base font-medium rounded-md text-yellow-600 bg-white hover:bg-yellow-50 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Payment Dates
+          </Link>
+        </div>
+              
               <div className="bg-yellow-50 p-6 rounded-lg my-8">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
                   April 2025 Updates
