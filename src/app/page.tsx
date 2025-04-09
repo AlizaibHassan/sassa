@@ -63,10 +63,6 @@ export default async function Home() {
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               SASSA Status Check
             </h1>
-            <p>
-  Check your SRD R350 grant application status for April 2025. Get instant access to your payment information.
-</p>
-
           </div>
         </div>
         
