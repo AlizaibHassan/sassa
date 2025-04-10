@@ -40,7 +40,7 @@ export default function NotFound() {
               Payment Dates 2025
             </Link>
             <Link 
-              href="/balance-check-sassa"
+              href="/balance-check"
               className="text-yellow-600 hover:text-yellow-700"
             >
               Check Balance
