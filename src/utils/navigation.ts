@@ -8,7 +8,7 @@ export const mainNavItems: NavItem[] = [
   {
     id: 22,
     title: "Sassa Status",
-    href: "/check"
+    href: "/"
   },
   {
     id: 744,
