@@ -68,6 +68,19 @@ export default async function Home() {
         
       </section>
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5087645624131694"
+     crossorigin="anonymous"></script>
+<!-- S top add -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5087645624131694"
+     data-ad-slot="5558342186"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      
       {/* Page Content */}
       {pageContent && (
         <section className="py-12 bg-gray-50">
