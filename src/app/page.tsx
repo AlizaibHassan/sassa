@@ -1,7 +1,20 @@
+'use client'
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Calendar, AlertCircle, RefreshCw } from 'lucide-react';
 import { getPageById } from '@/utils/wordpress';
+import { useEffect } from 'react';
+
+export default function HomePage() {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (e) {
+        console.error("AdSense push error:", e);
+      }
+    }
+  }, []);
 
 // Generate metadata from WordPress page content
 export async function generateMetadata(): Promise<Metadata> {
