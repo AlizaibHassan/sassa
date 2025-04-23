@@ -64,15 +64,6 @@ export default async function Home() {
               SASSA Status Check
             </h1>
             
-            <ins
-              className="adsbygoogle"
-              style={{ display: 'block' }}
-              data-ad-client="ca-pub-5087645624131694"
-              data-ad-slot="5558342186"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            ></ins>
-            
           </div>
         </div>
         
