@@ -1,5 +1,10 @@
 import { getAllPosts, getAllPages } from './wordpress';
 
+function formatToValidDate(date: string | Date): string {
+  const d = new Date(date);
+  return d.toISOString().split('.')[0] + 'Z'; // Remove milliseconds
+}
+
 export async function generateSitemapEntries() {
   try {
     const [posts, pages] = await Promise.all([
@@ -11,13 +16,13 @@ export async function generateSitemapEntries() {
     const staticRoutes = [
       {
         url: '/',
-        lastMod: new Date().toISOString(),
+        lastMod: formatToValidDate(new Date()),
         changefreq: 'daily',
         priority: 1.0,
       },
       {
         url: '/blog',
-        lastMod: new Date().toISOString(),
+        lastMod: formatToValidDate(new Date()),
         changefreq: 'daily',
         priority: 0.9,
       },
@@ -26,7 +31,7 @@ export async function generateSitemapEntries() {
     // Blog post routes
     const postRoutes = posts.map(post => ({
       url: `/blog/${post.slug}`,
-      lastMod: post.modified,
+      lastMod: formatToValidDate(post.modified),
       changefreq: 'weekly',
       priority: 0.8,
     }));
@@ -34,7 +39,7 @@ export async function generateSitemapEntries() {
     // Page routes
     const pageRoutes = pages.map(page => ({
       url: `/pages/${page.slug}`,
-      lastMod: page.modified,
+      lastMod: formatToValidDate(page.modified),
       changefreq: 'weekly',
       priority: 0.7,
     }));
@@ -57,9 +62,9 @@ export function generateSitemapXml(entries: any[]) {
   `).join('');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${xmlItems}
-    </urlset>`;
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    ${xmlItems}
+  </urlset>`;
 }
 
 export function generateRssFeed(posts: any[]) {
@@ -74,14 +79,14 @@ export function generateRssFeed(posts: any[]) {
   `).join('');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-    <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-      <channel>
-        <title>SASSA Services Blog</title>
-        <link>https://sassa.web.za</link>
-        <description>Latest news and updates about SASSA services, grants, and payments</description>
-        <language>en-ZA</language>
-        <atom:link href="https://sassa.web.za/rss.xml" rel="self" type="application/rss+xml"/>
-        ${rssItems}
-      </channel>
-    </rss>`;
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>SASSA Services Blog</title>
+      <link>https://sassa.web.za</link>
+      <description>Latest news and updates about SASSA services, grants, and payments</description>
+      <language>en-ZA</language>
+      <atom:link href="https://sassa.web.za/rss.xml" rel="self" type="application/rss+xml"/>
+      ${rssItems}
+    </channel>
+  </rss>`;
 }
