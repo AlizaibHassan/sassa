@@ -1,11 +1,26 @@
 import { getAllPosts, getAllPages } from './wordpress';
 
-function formatToValidDate(date: string | Date): string {
-  const d = new Date(date);
-  return d.toISOString().split('.')[0] + 'Z'; // Remove milliseconds
+type SitemapEntry = {
+  url: string;
+  lastMod: string;
+  changefreq: string;
+  priority: number;
+};
+
+// ✅ Format date to valid ISO 8601 format without milliseconds
+function formatToValidDate(date: string | Date | undefined | null): string {
+  const d = new Date(date ?? Date.now());
+
+  // fallback for invalid dates
+  if (isNaN(d.getTime())) {
+    console.warn('Invalid date found in sitemap generation:', date);
+    return new Date().toISOString().split('T')[0]; // e.g., "2025-04-25"
+  }
+
+  return d.toISOString().split('.')[0] + 'Z'; // e.g., "2025-04-25T12:32:13Z"
 }
 
-export async function generateSitemapEntries() {
+export async function generateSitemapEntries(): Promise<SitemapEntry[]> {
   try {
     const [posts, pages] = await Promise.all([
       getAllPosts(),
@@ -13,7 +28,7 @@ export async function generateSitemapEntries() {
     ]);
 
     // Static routes
-    const staticRoutes = [
+    const staticRoutes: SitemapEntry[] = [
       {
         url: '/',
         lastMod: formatToValidDate(new Date()),
@@ -29,7 +44,7 @@ export async function generateSitemapEntries() {
     ];
 
     // Blog post routes
-    const postRoutes = posts.map(post => ({
+    const postRoutes: SitemapEntry[] = posts.map(post => ({
       url: `/blog/${post.slug}`,
       lastMod: formatToValidDate(post.modified),
       changefreq: 'weekly',
@@ -37,7 +52,7 @@ export async function generateSitemapEntries() {
     }));
 
     // Page routes
-    const pageRoutes = pages.map(page => ({
+    const pageRoutes: SitemapEntry[] = pages.map(page => ({
       url: `/pages/${page.slug}`,
       lastMod: formatToValidDate(page.modified),
       changefreq: 'weekly',
@@ -51,7 +66,7 @@ export async function generateSitemapEntries() {
   }
 }
 
-export function generateSitemapXml(entries: any[]) {
+export function generateSitemapXml(entries: SitemapEntry[]): string {
   const xmlItems = entries.map(entry => `
     <url>
       <loc>https://sassa.web.za${entry.url}</loc>
@@ -62,12 +77,12 @@ export function generateSitemapXml(entries: any[]) {
   `).join('');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${xmlItems}
-  </urlset>`;
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${xmlItems}
+</urlset>`;
 }
 
-export function generateRssFeed(posts: any[]) {
+export function generateRssFeed(posts: any[]): string {
   const rssItems = posts.map(post => `
     <item>
       <title><![CDATA[${post.title.rendered}]]></title>
@@ -79,14 +94,14 @@ export function generateRssFeed(posts: any[]) {
   `).join('');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-      <title>SASSA Services Blog</title>
-      <link>https://sassa.web.za</link>
-      <description>Latest news and updates about SASSA services, grants, and payments</description>
-      <language>en-ZA</language>
-      <atom:link href="https://sassa.web.za/rss.xml" rel="self" type="application/rss+xml"/>
-      ${rssItems}
-    </channel>
-  </rss>`;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SASSA Services Blog</title>
+    <link>https://sassa.web.za</link>
+    <description>Latest news and updates about SASSA services, grants, and payments</description>
+    <language>en-ZA</language>
+    <atom:link href="https://sassa.web.za/rss.xml" rel="self" type="application/rss+xml"/>
+    ${rssItems}
+  </channel>
+</rss>`;
 }
