@@ -32,13 +32,10 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
-};
-
-export default {
-  ...nextConfig,
   async redirects() {
     return [
-      {
+      
+       {
         source: '/your-financial-calendar-sassa-r350-grant-payment-highlights',
         destination: '/blog/your-financial-calendar-sassa-r350-grant-payment-highlights',
         permanent: true,
@@ -588,6 +585,10 @@ export default {
         destination: '/blog/2024-old-age-grant-increase-understanding-the-new-sassa-old-age-grant-amount',
         permanent: true,
       },
+      
+      
     ];
   },
 };
+
+export default nextConfig;
