@@ -59,9 +59,10 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-yellow-50 to-white py-10">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6"> 
-            
+          <div className="max-w-4xl mx-auto text-center"> 
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            SASSA Status Check
+            </h1>
           </div>
         </div>
         
