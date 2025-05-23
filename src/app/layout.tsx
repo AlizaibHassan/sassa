@@ -8,7 +8,10 @@ import { Suspense } from 'react';
 import Script from 'next/script';
 import CanonicalTag from '@/components/CanonicalTag';
 
- const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap', // 🔥 Essential: allows browser to show fallback text first
+});
 
 export const metadata: Metadata = {
   title: 'SASSA Services',
