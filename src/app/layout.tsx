@@ -9,8 +9,7 @@ import Script from 'next/script';
 import CanonicalTag from '@/components/CanonicalTag';
 
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap', // Essential: allows browser to show fallback text first
+  subsets: ['latin']
 });
 
 
