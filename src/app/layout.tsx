@@ -8,10 +8,7 @@ import { Suspense } from 'react';
 import Script from 'next/script';
 import CanonicalTag from '@/components/CanonicalTag';
 
-const inter = Inter({
-  subsets: ['latin']
-});
-
+ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'SASSA Services',
