@@ -92,7 +92,7 @@ export default async function Home() {
                 Payment Dates
               </h2>
               <p className="text-gray-600 mb-4">
-                View the latest SASSA payment dates for April 2025 and plan ahead.
+                View the latest SASSA payment dates for 2025 and plan ahead.
               </p>
               <Link href="/payment-dates" className="text-yellow-600 hover:text-yellow-700 inline-flex items-center gap-1">
                 View Schedule <ArrowRight size={16} />
