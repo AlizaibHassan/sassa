@@ -87,10 +87,10 @@ export default async function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <Calendar className="text-yellow-500" />
                 Payment Dates
-              </h2>
+              </h3>
               <p className="text-gray-600 mb-4">
                 View the latest SASSA payment dates for 2025 and plan ahead.
               </p>
@@ -100,10 +100,10 @@ export default async function Home() {
             </div>
 
             <div className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <AlertCircle className="text-yellow-500" />
                 Application Status
-              </h2>
+              </h3>
               <p className="text-gray-600 mb-4">
                 Track your SRD grant application status and payment progress.
               </p>
@@ -113,10 +113,10 @@ export default async function Home() {
             </div>
 
             <div className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <RefreshCw className="text-yellow-500" />
                 Latest Updates
-              </h2>
+              </h3>
               <p className="text-gray-600 mb-4">
                 Stay informed about recent changes and announcements.
               </p>
@@ -132,9 +132,9 @@ export default async function Home() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               Important Information
-            </h2>
+            </h3>
             <div className="prose prose-lg max-w-none">
               <p>
                 The SASSA R370 grant (Social Relief of Distress Grant) is currently available for the
