@@ -28,11 +28,11 @@ const description = pageContent?.excerpt?.rendered
       title,
       description,
       type: 'website',
-      siteName: 'SASSA Services',
-      url: 'https://www.sassaservices.com/status-check', // Add the URL of the page
+      siteName: 'SASSA Status Check',
+      url: 'https://www.sassa.web.za/', // Add the URL of the page
       images: [
         {
-          url: 'https://www.sassaservices.com/images/sassa-status-check.jpg', // Add an image URL
+          url: 'https://www.sassa.web.za/images/sassa-status-check.jpg', // Add an image URL
           width: 1200,
           height: 630,
           alt: 'SASSA Status Check',
@@ -43,9 +43,9 @@ const description = pageContent?.excerpt?.rendered
       card: 'summary_large_image',
       title,
       description,
-      site: '@SASSAServices', // Add your Twitter handle
-      creator: '@SASSAServices', // Add your Twitter handle
-      images: ['https://www.sassaservices.com/images/sassa-status-check.jpg'], // Add an image URL
+      site: '@sassawebza', // Add your Twitter handle
+      creator: '@sassawebza', // Add your Twitter handle
+      images: ['https://www.sassa.web.za/images/sassa-status-check.jpg'], // Add an image URL
     },
   };
 }
@@ -137,7 +137,7 @@ export default async function Home() {
             </h2>
             <div className="prose prose-lg max-w-none">
               <p>
-                The SASSA R350 grant (Social Relief of Distress Grant) is currently available for the
+                The SASSA R370 grant (Social Relief of Distress Grant) is currently available for the
                 2024/25 financial year. Here are the key points you need to know:
               </p>
               <ul>
