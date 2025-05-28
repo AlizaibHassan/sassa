@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local'
 import "./globals.css";
 import "./animations.css";
 import Navbar from '@/components/nav/Navbar';
@@ -8,10 +8,15 @@ import { Suspense } from 'react';
 import Script from 'next/script';
 import CanonicalTag from '@/components/CanonicalTag';
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap', // 🔥 Essential: allows browser to show fallback text first
-});
+const inter = localFont({
+  src: [
+    { path: '/fonts/Inter/Inter-VariableFont_opsz-wght.ttf', weight: '100 900', style: 'normal' },
+    { path: '/fonts/Inter/Inter-Italic-VariableFont-wght.ttf', weight: '100 900', style: 'italic' },
+  ],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter',
+})
 
 export const metadata: Metadata = {
   title: 'SASSA Services',
