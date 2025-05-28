@@ -10,9 +10,9 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {Object.entries(footerGroups).map(([key, group]) => (
             <div key={key} className="flex flex-col">
-              <h3 className="text-lg font-bold mb-6 text-yellow-400">
+              <p className="text-lg font-bold mb-6 text-yellow-400">
                 {group.title}
-              </h3>
+              </p>
               <ul className="space-y-4 flex-grow">
                 {group.items.map((item) => (
                   <li key={item.href}>
