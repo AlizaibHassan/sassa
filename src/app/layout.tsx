@@ -1,12 +1,15 @@
+// src/app/layout.tsx
+
 import type { Metadata } from 'next';
-import "./globals.css";
-import "./animations.css";
+import localFont from 'next/font/local';
+import './globals.css';
+import './animations.css';
+
 import Navbar from '@/components/nav/Navbar';
 import Footer from '@/components/nav/Footer';
 import { Suspense } from 'react';
 import Script from 'next/script';
 import CanonicalTag from '@/components/CanonicalTag';
-
 
 export const metadata: Metadata = {
   title: 'SASSA Services',
@@ -16,16 +19,36 @@ export const metadata: Metadata = {
   },
 };
 
+const inter = localFont({
+  variable: '--font-inter',
+  display: 'swap',
+  preload: true,
+  src: [
+    {
+      // moved into your source tree under src/fonts/
+      path: '../fonts/Inter-VariableFont_opsz-wght.ttf',
+      weight: '100 900',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Inter-Italic-VariableFont-wght.ttf',
+      weight: '100 900',
+      style: 'italic',
+    },
+  ],
+});
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className={`${inter.variable} h-full`}>
       <head>
         {/* Self-Canonical Tag */}
         <CanonicalTag />
+
         {/* Google Tag Manager Script */}
         <Script
           id="gtm-script"
@@ -46,7 +69,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} min-h-full flex flex-col antialiased`}>
+      <body className="min-h-full flex flex-col antialiased">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -54,19 +77,19 @@ export default function RootLayout({
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
-          ></iframe>
+          />
         </noscript>
-        
-        {/* Navbar with Suspense boundary */}
+
+        {/* Navbar */}
         <Suspense fallback={null}>
           <Navbar />
         </Suspense>
-        
-        {/* Main content with padding for fixed navbar */}
+
+        {/* Main content */}
         <main className="flex-grow pt-16 transition-all duration-300">
           <Suspense>{children}</Suspense>
         </main>
-        
+
         {/* Footer */}
         <Suspense fallback={null}>
           <Footer />
