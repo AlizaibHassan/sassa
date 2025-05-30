@@ -92,7 +92,20 @@ export default function RootLayout({
           <Footer />
         </Suspense>
 
-     
+        {/* Custom inline script */}
+        <Script
+          id="custom-bvtpk-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(s,u,z,p){
+                s.src=u;
+                s.setAttribute('data-zone', z);
+                p.appendChild(s);
+              })(document.createElement('script'), 'https://bvtpk.com/tag.min.js', 9394566, document.body || document.documentElement);
+            `,
+          }}
+        />
       </body>
     </html>
   );
