@@ -45,7 +45,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full`}>
       <head>
-        <meta name="galaksion-domain-verification" content="9835784bf4ab7c2bf17374663934909bb82573f587abc23a81a922571975fc74" />
         {/* Canonical tag */}
         <CanonicalTag />
 
