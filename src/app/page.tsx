@@ -67,8 +67,6 @@ export default async function Home() {
         </div>
         
       </section>
- 
-
       
       {/* Page Content */}
       {pageContent && (
@@ -79,7 +77,6 @@ export default async function Home() {
             </div>
           </div>
         </section>
-
       )}
 
       {/* Quick Links */}
