@@ -92,15 +92,7 @@ export default function RootLayout({
           <Footer />
         </Suspense>
 
-        {/* New Script: https://fpyf8.com/88/tag.min.js */}
-        <Script
-          id="custom-zone-script"
-          src="https://fpyf8.com/88/tag.min.js"
-          data-zone="149845"
-          async
-          data-cfasync="false"
-          strategy="afterInteractive"
-        />
+     
       </body>
     </html>
   );
